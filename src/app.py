@@ -6,5 +6,3 @@ app = Flask(__name__)
 @app.route('/')
 def index_page():
     return "This is index page"
-
-
