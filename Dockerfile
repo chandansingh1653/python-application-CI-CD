@@ -10,4 +10,6 @@ RUN pip3 install -r /tmp/requirements.txt
 RUN mkdir -p /data
 COPY src/* /data/src/
 WORKDIR /data/src
-CMD python3 -m flask run
+EXPOSE 8080
+CMD gunicorn -w 4 -b 0.0.0.0:8080 app:app
+
