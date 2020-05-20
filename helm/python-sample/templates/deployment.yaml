@@ -5,7 +5,7 @@ metadata:
   labels:
     app: synergy-chandan
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: synergy-chandan
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: synergy-chandan
-        image: chandansingh1653/python-sample:53
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         ports:
-        - containerPort: 8080
+        - containerPort: {{ .Values.service.port }}
