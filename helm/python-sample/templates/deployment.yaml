@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-sample
+  labels:
+    app: synergy-chandan
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: synergy-chandan
+  template:
+    metadata:
+      labels:
+        app: synergy-chandan
+    spec:
+      containers:
+      - name: synergy-chandan
+        image: chandansingh1653/python-sample:53
+        ports:
+        - containerPort: 8080
