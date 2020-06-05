@@ -1,7 +1,7 @@
 FROM  ubuntu:18.04
 RUN apt-get update
 RUN apt-get install -y python python-dev python-pip python-virtualenv
-RUN apt-get install -y python3-pip
+RUN apt-get install -y python3-pip git
 ENV FLASK_APP=app.py
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
